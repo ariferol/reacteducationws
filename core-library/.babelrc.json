@@ -1,0 +1,4 @@
+{
+    //presets dizisi içerisindeki değerler, babel tarafından kullanılacak olan pluginlerin listesidir.
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
