@@ -1,66 +1,70 @@
---Kaynak reposu:
-https://github.com/carpediem23/reactjs-corporate-learning-materials
+# Getting Started with Create React App
 
---------------------------------------------------------------------------------------------------------------------------
-npm i -g npm (nodejs kurulumundan sonra hata alinirsa npm paketlerinin force olarak install edilmesini sagliyor )
-npx create-react-app my-react-app
-cd my-react-app
-npm start
-http://localhost:3000/
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
---java compile = react transpile
+## Available Scripts
 
---class ve functional olmak uzere iki tur component yapisi var;
+In the project directory, you can run:
 
---vs code extentions:
-1) Simple React Snippets
+### `npm start`
 
--- repodan react kodunu ayaklandirma islemi:
---repodan kodu pull cekip sonra ; "npm install" komutu ile node_modules u yani dependency leri install ediyoruz
--- npm install
--- npm run build
--- npm start
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
--- bootstrap ve axios api implementation;
-npm install bootstrap
-npm i axios
---seklinde paket bagimliliklari node_modules e ekleniyor. sonra;
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
 
---devtools kurulumu;(https://react.dev/learn/react-developer-tools)
-npm install -g react-devtools
---sonra browser extention u nu install ediyoruz
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
---manuel kurulum:
-1) npm init
-2) npm i react-dom –save
-3) npm config set registry http://registry.npmjs.org
-4) npm install webpack webpack-cli webpack-dev-server - save-dev
-5) npm i –save-dev babel-core
-6) npm i –save-dev babel-loader
-7) npm i –save-dev babel-preset-react
-8) npm i –save-dev babel-preset-es2015
+### `npm run build`
 
---Sonra "src" folder i olusturuyoruz. Icine ; "App.jsx,App.module.css ve index.js" dosyalarini create ediyoruz.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
---Sonra "public" folder i olusturup icine "index.html" dosyasi olusturup bos template html yaziyoruz.
-(vs code de "!" + enter tusu otomatik html sablonu olusturuyor)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
---Sonra ".babelrc.json" ve "webpack.config.js" file larini olusturuyoruz.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
--- enson alttaki install komutu ile eksik paketler varsa installation u teyit ediyoruz;
-9) npm install
-10) npm init @eslint/config
-komutu ile eslint toolkit extention unu ekliyoruz;
-√ How would you like to use ESLint? · problems
-√ What type of modules does your project use? · esm
-√ Which framework does your project use? · react
-√ Does your project use TypeScript? · No / Yes
-√ Where does your code run? · browser
-√ What format do you want your config file to be in? · JSON
+### `npm run eject`
 
---default sonuc yukaridaki ornek kullanilabilir.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
---sonra eslint i kontrol amacli "npx eslint ./src/App.jsx" komutu ile calistirabiliriz.
--- ".eslintrc.json" config file i ekliyoruz.
-Note: "https://eslint.org/docs/latest/use/getting-started" linkinden kurulum adimlarini inceleyebilirsiniz
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
