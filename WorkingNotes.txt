@@ -1,5 +1,6 @@
 --Kaynak reposu:
 https://github.com/carpediem23/reactjs-corporate-learning-materials
+--React app docker ile calistirma : https://medium.com/@carpediem.2323/react-js-uygulaman%C4%B1z%C4%B1-docker%C4%B1n-g%C3%BCc%C3%BCyle-nas%C4%B1l-s%C3%BCper-y%C3%BCksek-h%C4%B1zda-%C3%A7al%C4%B1%C5%9Ft%C4%B1r%C4%B1rs%C4%B1n%C4%B1z-71f9cc8ef5d2
 
 --------------------------------------------------------------------------------------------------------------------------
 npm i -g npm (nodejs kurulumundan sonra hata alinirsa npm paketlerinin force olarak install edilmesini sagliyor )
@@ -71,6 +72,7 @@ Note: "https://eslint.org/docs/latest/use/getting-started" linkinden kurulum adi
 --sonra editor den prettier config ayarlarini yapiyoruz
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --todo sample project:
+--json server i kuruyoruz;(https://github.com/typicode/json-server)
 npm install
 npm i -g json-server -D
 olmazsa
@@ -84,6 +86,12 @@ json-server --watch db.json --port 3009
 --ayakta olacak json-server service linki: 
 http://localhost:3009/todos
 seklinde olacak.
+
+--bunu incele; https://www.geeksforgeeks.org/how-to-do-crud-operations-in-reactjs/
+
+npm i react-bootstrap bootstrap@5.1.3 react-router-dom
+
+--Stateless component ekleme vscode kisa yolu : sfc + enter (Simple Code Snippet extention da)
 
 
 
