@@ -7,9 +7,7 @@ const Navigator = () => {
     return ( 
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<TodoModule />} />
-                <Route path="/ekle" element={<p>about</p>} />
-                <Route path="*" element={<p>404</p>} />
+                <Route path="*" element={<TodoModule />} />
             </Routes>
         </BrowserRouter>
      );
