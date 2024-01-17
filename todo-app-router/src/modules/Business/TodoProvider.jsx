@@ -80,8 +80,19 @@ const TodoProvider = ({ children }) => {
         }
     };
 
+    const deleteTodo = async (id) => {
+        dispatch({ type: actionEnum.POST_TODOS_START });
+
+        try {
+            const data = await remove(id);
+            dispatch({ type: actionEnum.POST_TODOS_SUCCESS, payload: data });
+        } catch (error) {
+            dispatch({ type: actionEnum.POST_TODOS_ERROR, payload: error });
+        }
+    };
+
     return (
-        <TodoContext.Provider value={{ getAllTodos, addTodo, state }}>
+        <TodoContext.Provider value={{ getAllTodos, addTodo, deleteTodo, state }}>
             {children}
         </TodoContext.Provider>
     );

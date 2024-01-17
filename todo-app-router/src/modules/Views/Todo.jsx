@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { TodoContext } from "../Business/TodoProvider";
 
 const Todo = ({ id, title }) => {
+    const { deleteTodo } = useContext(TodoContext);
     return (
         <li className="d-flex justify-content-between p-4 m-4 border">
             <h3>{title}</h3>
@@ -9,7 +11,11 @@ const Todo = ({ id, title }) => {
                 <button
                     className="btn btn-danger mx-4"
                     type="button"
-                    onClick={() => console.log("Sil")}
+                    onClick={() =>
+                        deleteTodo(id).then(() => {
+                            window.location.reload();
+                        })
+                    }
                 >
                     Sil
                 </button>
