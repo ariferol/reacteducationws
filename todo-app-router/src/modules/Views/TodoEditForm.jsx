@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TodoContext } from "../Business/TodoProvider";
 
 const TodoEditForm = () => {
     const navigate = useNavigate();
     const { id } = useParams();
-    console.log(id);
-    const { addTodo } = useContext(TodoContext);
+    const { addTodo, getTodo, state } = useContext(TodoContext);
+    console.log("id", id);
     const onSubmit = (e) => { 
         const data = new FormData(e.currentTarget);
         e.preventDefault();
@@ -20,6 +20,10 @@ const TodoEditForm = () => {
             navigate("/");
         });        
     };
+
+    useEffect(() => {
+        getTodo(id);
+    }, []);
 
     return (
         <form onSubmit={onSubmit}>

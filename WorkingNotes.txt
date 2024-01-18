@@ -93,6 +93,11 @@ npm i react-bootstrap bootstrap@5.1.3 react-router-dom
 
 --Stateless component ekleme vscode kisa yolu : sfc + enter (Simple Code Snippet extention da)
 
+-- react ta form yonetimi icin kullanilan formik ve yup apileri;
+--npm i formik
+
+
+
 
 
 

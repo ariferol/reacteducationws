@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import { getAll, post, put, remove } from "./TodoService";
+import { getAll, get, post, put, remove } from "./TodoService";
 
 const TodoContext = createContext();
 
@@ -52,6 +52,55 @@ const todoReducer = (state, action) => {
                 ...state,
                 error: action.payload,
             };
+        case actionEnum.DELETE_TODOS_START:
+            return {
+                ...state,
+                loading: true,
+            };
+        case actionEnum.DELETE_TODOS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+            };
+        case actionEnum.DELETE_TODOS_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
+        case actionEnum.PUT_TODOS_START:
+            return {
+                ...state,
+                loading: true,
+            };
+        case actionEnum.PUT_TODOS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+            };
+        case actionEnum.PUT_TODOS_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
+        case actionEnum.GET_TODOS_START:
+            return {
+                ...state,
+                loading: true,
+            };
+        case actionEnum.GET_TODOS_SUCCESS:
+            return {
+                ...state,
+                todo: action.payload,
+                loading: false,
+            };
+        case actionEnum.GET_TODOS_ERROR:
+            return {
+                ...state,
+                error: action.payload,
+                loading: false,
+            };
         default:
             return state;
     }
@@ -61,6 +110,7 @@ const initialState = {
     todos: [],
     loading: false,
     error: null,
+    todo: null,
 };
 
 const TodoProvider = ({ children }) => {

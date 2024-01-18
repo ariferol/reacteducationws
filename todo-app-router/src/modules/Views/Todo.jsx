@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import { TodoContext } from "../Business/TodoProvider";
 
 const Todo = ({ id, title }) => {
+    const navigate = useNavigate();
     const { deleteTodo, getAllTodos } = useContext(TodoContext);
 
     return (
@@ -19,7 +21,7 @@ const Todo = ({ id, title }) => {
                 <button
                     className="btn btn-warning"
                     type="button"
-                    onClick={() => console.log("düzenle")}
+                    onClick={() => navigate("/todos/duzenle/" + id)}
                 >
                     Düzenle
                 </button>
