@@ -31,6 +31,7 @@ const todoReducer = (state, action) => {
         case actionEnum.GETALL_TODOS_SUCCESS:
             return {
                 ...state,
+                loading: false,
                 todos: action.payload,
             };
         case actionEnum.GETALL_TODOS_ERROR:
@@ -110,7 +111,10 @@ const initialState = {
     todos: [],
     loading: false,
     error: null,
-    todo: null,
+    todo: {
+        title: "",
+        completed: false,
+    },
 };
 
 const TodoProvider = ({ children }) => {
@@ -151,7 +155,6 @@ const TodoProvider = ({ children }) => {
 
     const putTodo = async (id, todo) => {
         dispatch({ type: actionEnum.PUT_TODOS_START });
-
         try {
             const data = await put(id, todo);
             dispatch({ type: actionEnum.PUT_TODOS_SUCCESS, payload: data });

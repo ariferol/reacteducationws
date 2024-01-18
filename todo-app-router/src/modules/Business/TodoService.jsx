@@ -23,7 +23,7 @@ const post = async (todo) => {
 
 const put = async (id, todo) => {
     const response = await fetch(`${process.env.SERVICE_ENDPOINT}/todos/${id}`, {
-        method: "POST",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },

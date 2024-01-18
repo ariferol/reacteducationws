@@ -1,14 +1,18 @@
 import React, { useContext, useEffect } from "react";
 import { TodoContext } from "../Business/TodoProvider";
-import { Todo } from ".";
+import { Todo, Loader } from ".";
 
 const TodoList = () => {
     const { state, getAllTodos }= useContext(TodoContext);
-    const { todos } = state;
+    const { todos, loading } = state;
 
     useEffect(() => {
         getAllTodos();
     }, []);
+
+    if(loading) {
+        return <Loader />;
+    }
 
     return (
         <ul>

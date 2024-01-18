@@ -8,7 +8,9 @@ const App = () => {
     return (
         <section className={styles.App}>
             <Suspense fallback={<div>Yükleniyor...</div>}>
-                <Navigator />
+                <div className="container">
+                    <Navigator />
+                </div>
             </Suspense>
         </section>
     );

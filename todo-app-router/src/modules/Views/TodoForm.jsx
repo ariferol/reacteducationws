@@ -6,27 +6,22 @@ import { TodoContext } from "../Business/TodoProvider";
 
 const TodoForm = () => {
     const navigate = useNavigate();
-
     const { addTodo } = useContext(TodoContext);
-
-    const validationSchema = Yup.object().shape(
-        {
-            title: Yup.string().required("Zorunlu alan"),
-            completed: Yup.boolean()
-        }
-    );
+    const validationSchema = Yup.object().shape({
+        title: Yup.string().required("Zorunlu alan"),
+        completed: Yup.boolean(),
+    });
     const formik = useFormik({
         initialValues: {
             title: "",
-            completed: false
+            completed: false,
         },
         validationSchema,
-        onSubmit: values => {
+        onSubmit: (values) => {
             addTodo({
                 title: values.title,
-                completed: values.completed
-            })
-            .then(() => navigate("/todos"));
+                completed: values.completed,
+            }).then(() => navigate("/todos"));
         },
     });
 
@@ -42,10 +37,15 @@ const TodoForm = () => {
                 onChange={formik.handleChange}
             />
             <label>Todo Tamamlandı</label>
-            <input className="form-check-input" type="checkbox" name="completed" defaultValue={formik.values.completed}
-                onChange={formik.handleChange} />
+            <input
+                className="form-check-input"
+                type="checkbox"
+                name="completed"
+                defaultValue={formik.values.completed}
+                onChange={formik.handleChange}
+            />
             <button className="btn btn-success d-block" type="submit">
-                Add
+                Ekle
             </button>
         </form>
     );
