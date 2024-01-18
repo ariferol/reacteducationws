@@ -54,6 +54,7 @@ const TodoEditForm = () => {
             <button className="btn btn-success d-block" type="submit">
                 Güncelle
             </button>
+            <button className="btn btn-primary my-4" type="button" onClick={() => navigate("/todos")}>Geri</button>
         </form>
     );
 };

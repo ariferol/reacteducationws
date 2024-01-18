@@ -47,6 +47,7 @@ const TodoForm = () => {
             <button className="btn btn-success d-block" type="submit">
                 Ekle
             </button>
+            <button className="btn btn-primary my-4" type="button" onClick={() => navigate("/todos")}>Geri</button>
         </form>
     );
 };
