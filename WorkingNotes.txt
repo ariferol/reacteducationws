@@ -9,7 +9,23 @@ cd my-react-app
 npm start
 http://localhost:3000/
 
---java compile = react transpile
+--Specific start edilmek istenirse;
+package.json file in icinde asagidaki gibi run scripts tanimlanabilir:
+"scripts": {
+    "start": "webpack serve --config webpack.config.js --mode development --open",
+    "start:server": "json-server --watch db.json --port 3000",
+    "build": "webpack --config webpack.config.js --mode production",
+    "test": "npx jest",
+    "lint": "npx eslint src/**/*.tsx src/**/*.ts",
+    "lint:fix": "npx eslint src/**/*.jsx src/**/*.js src/**/*.tsx src/**/*.ts --fix",
+    "prettier": "npx prettier src/**/*.jsx src/**/*.js src/**/*.tsx src/**/*.ts --check",
+    "prettier:fix": "npx prettier src/**/*.jsx src/**/*.js src/**/*.tsx src/**/*.ts --write"
+  }
+--Bu run scripts ise; 
+"npm run start:server" seklinde calistirilinca  "json-server --watch db.json --port 3000" satirindaki komut calistirilmis olur
+--------------------------------------------------------------------------------------------------------------------------
+Not: java compile = react transpile
+--------------------------------------------------------------------------------------------------------------------------
 
 --class ve functional olmak uzere iki tur component yapisi var;
 

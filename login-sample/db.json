@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "3",
+      "firstName": "Tacettin Yaşar Alptuğ",
+      "lastName": "Türkiş",
+      "age": 19
+    },
+    {
+      "id": "4",
+      "firstName": "Alptuğ",
+      "lastName": "Türkiş",
+      "age": 18
+    },
+    {
+      "id": "5",
+      "firstName": "Oleta",
+      "lastName": "Abbott",
+      "age": 18
+    },
+    {
+      "id": "6",
+      "firstName": "Terry",
+      "lastName": "Medhurst",
+      "age": 60
+    },
+    {
+      "firstName": "Osman",
+      "lastName": "Abalı",
+      "age": 48,
+      "id": "7"
+    }
+  ]
+}
