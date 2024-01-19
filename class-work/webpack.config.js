@@ -28,6 +28,7 @@ module.exports = {
     devServer: {
         port: process.env.PORT || 3000,
         hot: true, // hot reload
+        historyApiFallback: true,
     },
     // dosyaları compile ederken hangi loader'ları kullanacağız
     module: {

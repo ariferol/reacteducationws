@@ -165,10 +165,69 @@ docker run --name mytodo-app -d -p 30033:80 todo-app:1.1
 http://localhost:30033/todos/
 linkinden deneyebilirsiniz
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --login form ornegi icin;
 --oauth server dummy sample url : https://dummyjson.com/docs/auth
-
+--sample login request:
+fetch('https://dummyjson.com/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    
+    username: 'kminchelle',
+    password: '0lelplR',
+    // expiresInMins: 60, // optional
+  })
+})
+.then(res => res.json())
+.then(console.log);
+--sample login response:
+{
+  "id": 15,
+  "username": "kminchelle",
+  "email": "kminchelle@qq.com",
+  "firstName": "Jeanne",
+  "lastName": "Halvorson",
+  "gender": "female",
+  "image": "https://robohash.org/Jeanne.png?set=set4",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvYXV0cXVpYXV0LnBuZz9zaXplPTUweDUwJnNldD1zZXQxIiwiaWF0IjoxNjM1NzczOTYyLCJleHAiOjE2MzU3Nzc1NjJ9.n9PQX8w8ocKo0dMCw3g8bKhjB8Wo7f7IONFBDqfxKhs"
+}
+--sample get user request:
+fetch('https://dummyjson.com/auth/me', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer /* YOUR_TOKEN_HERE */', 
+  }, 
+})
+.then(res => res.json())
+.then(console.log);
+--sample get user response:
+{
+  "id": 15,
+  "username": "kminchelle",
+  "email": "kminchelle@qq.com",
+  "firstName": "Jeanne",
+  "lastName": "Halvorson",
+  "gender": "female",
+  "image": "https://robohash.org/Jeanne.png?set=set4",
+  ... // other user fields
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Not: 
+1) "npm outdated " komutu ile eskimis bir npm paketi olup oldugunu kontrol edebiliriz
+2) npm registry degistirmek icin: "npm set registry https://registry.npmjs.org/" komutu ile degistirebiliriz. Bu default registry path i dir.
+3) ortam bazli profile file larin icinde parametreleri tutmak icin;
+"start": "webpack serve --open --config webpack.dev.js" seklinde start scriptlerini yazabiliriz. "webpack.test.js,webpack.prod.js" seklinde diger ortamlar icin webpack file in icin ortam icin
+kullanilacak profile bazli da environment parameter file larini tanimliyoruz.
+"webpack.prod.js" file inin icinde ; 
+For TypeScript:
+import dotenv from 'dotenv'
+dotenv.config({ path: `.env.prod` })
+seklinde environment bazli file lari tanimliyoruz. Artik ".env.dev,.env.test,.env.prod" file larine ortam bazli parametreleri verip kullanabiliriz.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Online react template projeler uzerinden calismak icin:
+"https://codesandbox.io/p/github/codesandbox/codesandbox-template-vite-react/main"
+"codesandbox.io" uzerinden kullanabilirsiniz.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
