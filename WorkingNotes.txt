@@ -28,7 +28,7 @@ Not: java compile = react transpile
 --------------------------------------------------------------------------------------------------------------------------
 
 --class ve functional olmak uzere iki tur component yapisi var;
-
+--Hooks lar dan; useEffect ve state ler in kullanimi onemli.
 --vs code extentions:
 1) Simple React Snippets
 
